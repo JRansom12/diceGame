@@ -1,0 +1,18 @@
+html { 
+  background: url(https://statesymbolsusa.org/sites/statesymbolsusa.org/files/primary-images/USAterrainMapBigstock.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: white;
+}
+h1 {
+	color: darkgreen;
+	text-decoration: underline;
+}
+#color1{
+	color: darkgreen;
+	font-size: 40px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+}
