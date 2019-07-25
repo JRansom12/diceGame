@@ -1,7 +1,7 @@
-let userName = prompt("Welcome to the game Cross the Country!\nWhat is your name?");
+let userName = prompt("What is your name?");
 let dreamCar = prompt("What is your dream car?");
-let horseName = prompt("What name do you think is a really cool name?");
-let firstRoll = alert(userName + ", welcome to Cross the Country! You're in San Francisco at the airport and you must go to New York City. You've lost all your belongings but you still have a ticket. Roll a 6 sided die to see which city your ticket flies to. Will you Cross the Country?");
+let horseName = prompt("What is a name you think is really cool?");
+let firstRoll = alert(userName + ", welcome to Cross the Country! You're in San Francisco at the airport and you must go to New York City. You've lost all your belongings but still have your ticket. Roll a 6 sided die to see which city your ticket takes you to. Can you Cross the Country?");
 
 function rollDice(number) {
   	let roll = Math.floor((Math.random() * number) + 1);
@@ -9,30 +9,30 @@ function rollDice(number) {
 }
 
 function crossTheCountry(){ //masterFunction
-  let milesRemain = planeRide() - carRide() - hitchHike() - walk() - trainRide() - bikeRide() - horseRide();
-    console.log(milesRemain);
-    return milesRemain;
-    if(milesRemain <= 0){
-      console.log("Congratulations! You've made it Cross the Country.");
-      alert("Congratulations! You've made it Cross the Country.");
+  let milesToGo = planeRide() - carRide() - hitchHike() - walk() - trainRide() - bikeRide() - horseRide();
+    if(milesToGo <=0){
+      console.log("Congratulations! You've made it across the country.");
+      alert("Congratulations! You've made it across the country.");
     }
     else{
       console.log("You failed to Cross the Country by " + milesRemain + " miles. Better luck next time.");
       alert("You failed to Cross the Country by " + milesRemain + " miles. Better luck next time.");
     }
+    return milesToGo;
 }
 console.log(crossTheCountry());
+
 
 function planeRide() {
 let planeTravel = rollDice(6);
 	if(planeTravel == 1){ //Kansas City
   		milesRemain = 1192;
-  		  		alert("You rolled a 1. You're in Kansas City. You have 1192 miles to go! Good luck, you're gonna need it.");
+  		  		alert("You rolled a 1. You're off to Kansas City. You'll have 1192 miles to go! Good luck, you're gonna need it.");
   		return milesRemain;
   	}
   	if(planeTravel == 2){ //Memphis
   		milesRemain = 1097;
-  		  		alert("You rolled a 2. You're in Memphis. You have 1,097 miles to go! You're going to need some grit to make it.");
+  		  		alert("You rolled a 2. You land in Memphis with 1,097 miles to go. You're going to need some grit to make it.");
   		return milesRemain;
   	}
   	if(planeTravel == 3){ //St. Louis
@@ -87,6 +87,7 @@ function walk(){
     let walkRoll = rollDice(12);
     let milesTravWalk = 3 * walkRoll;
         console.log(walkRoll);
+        return milesTravWalk;
         if(walkRoll <= 4){
             alert("You rolled a " + walkRoll + ". You didn't have much energy. You walked " + milesTravWalk + " miles before getting exhausted.");
 }
@@ -96,11 +97,10 @@ function walk(){
         else{
             alert("You rolled a " + walkRoll + "! You had gratuitous amounts of energy and walked " + milesTravWalk + " miles before getting exhausted.");
   }
-    return milesTravWalk;
 }
 console.log(walk());
 
-alert("You’re about to collapse when you hear a train. With one last burst of energy you throw yourself on a train car. Roll an 8 sided die to see how far the train travels before its next station.");
+alert("You're about to collapse when you hear a train. With one last burst of energy you throw yourself on a train car. Roll an 8 sided die to see how far the train travels before its next station.");
 
 function trainRide(){
     let trainRoll = rollDice(8);
@@ -111,7 +111,7 @@ alert("You rolled a " + trainRoll + ". The train ends up going " + milesTravTrai
 }
 console.log(trainRide());
 
-alert("You find a bicycle lying around. You’re feeling a bit rested from the train ride, maybe you can ride the rest of the way. You got this, " + userName + "!, you tell yourself. Roll a 10 sided die to determine how far you bike.");
+alert("You find a bicycle lying around. You're feeling a bit rested from the train ride, maybe you can ride the rest of the way. You got this, " + userName + "!, you tell yourself. Roll a 10 sided die to determine how far you bike.");
 
 function bikeRide(){
     let bikeRoll = rollDice(10);
